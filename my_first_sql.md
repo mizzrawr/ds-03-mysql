@@ -1,0 +1,16 @@
+drop table users;
+create table users (id integer PRIMARY KEY auto_increment, firstname varchar(20), lastname varchar(20), email varchar(20) NOT NULL, password varchar(40) NOT NULL, isAdmin boolean not null default 0);
+		insert into users ( firstname, lastname, email, password ) values ('lila', 'brown', 'jojo@yahoo.com', 'aaa');
+		insert into users ( firstname, lastname, email, password) values ( 'lulu', 'main', 'miau@gmail.com', 'aaa');
+		insert into users ( firstname, lastname, email, password) values ('lala', 'line', 'meow@live.com', 'aaa');
+        SELECT firstname, lastname, email, password, isAdmin FROM users WHERE id = 2;
+        UPDATE users SET isAdmin = 1 WHERE id = 2;
+        SELECT firstname, lastname, email, password, isAdmin FROM users WHERE id = 2;
+        SELECT * from users;
+        SELECT * from users WHERE isAdmin = 0;
+        SELECT firstname, lastname, id, password, isAdmin FROM users WHERE email = 'meow@live.com';
+        UPDATE users SET password = "NEW_PW" WHERE email = 'meow@live.com';
+        SELECT id ,firstname, lastname, email, password, isAdmin FROM users WHERE id = 3;
+        SELECT * from users;
+        DELETE FROM users WHERE id = 3;
+        SELECT * from users;
